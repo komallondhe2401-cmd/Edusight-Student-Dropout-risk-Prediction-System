@@ -1,59 +1,113 @@
-# 🎓 EduSight: Student Dropout Risk Prediction System
+# 🎓 EduSight – Student Dropout Risk Prediction System
 
-Edusight is an end-to-end Machine Learning web application built using **Streamlit** that predicts a student's **Dropout Risk Percentage (0-100%)**. The system utilizes a combination of **Mental Health indicators, Academic Performance, and Socio-Economic factors** to identify vulnerable students early and provide actionable administrative recommendations.
+## 📌 Overview
 
----
+EduSight is a Machine Learning-based web application designed to predict the risk of student dropout using mental health, academic, financial, and social factors.
 
-## 🚀 Key Features
-
-* **Three-Core Input Assessment**: Organizes student metrics into logical input categories via an interactive sidebar/form layout:
-  * *Psychological Metrics*: Stress Levels, Anxiety, Depression, and Burnout.
-  * *Academic Indicators*: Sleep Hours and Academic Performance (%).
-  * *Social Environment*: Financial Stress, Family Expectations, and Social Support networks.
-* **Real-time Predictive Analytics**: Processes inputs through a pre-trained feature scaler and machine learning regression engine to provide instant risk estimates.
-* **Interactive Data Visualizations**:
-  * An intuitive **Gauge Chart** illustrating the exact risk tier (Low, Moderate, High).
-  * A dynamic **Factor Breakdown Bar Chart** displaying the student's primary risk exposures for rapid diagnostic review.
-* **Automated Support Alerts**: Generates contextual warning flags and distinct action plans based on critical score boundaries.
+The system analyzes student data and generates a dropout risk percentage (0–100%), helping educational institutions identify at-risk students and take early intervention measures.
 
 ---
 
-## 📊 System Feature Matrix
+## 🚀 Features
 
-The prediction model calculates risk scores using the following 9 operational features:
-
-| Feature Name | Interface Label | Range | Description |
-| :--- | :--- | :--- | :--- |
-| `stress_level` | Stress Level | 0.0 – 10.0 | Self-reported scale of daily psychological stress. |
-| `anxiety_score` | Anxiety Score | 0.0 – 10.0 | Standardized assessment score for anxiety symptoms. |
-| `depression_score` | Depression Score | 0.0 – 10.0 | Standardized tracking index for depressive indicators. |
-| `sleep_hours` | Sleep Hours | 0.0 – 12.0 | Average duration of sleep captured per night. |
-| `burnout_score` | Burnout Score | 0.0 – 10.0 | Calculated burnout index relating to institutional workload. |
-| `academic_performance` | Academic Performance (%) | 0.0% – 100.0% | Cumulative percentage representing academic standing. |
-| `financial_stress` | Financial Stress | 0.0 – 10.0 | Perceived level of external financial hardship or strain. |
-| `family_expectation` | Family Expectation | 0.0 – 10.0 | Perceived degree of familial academic pressure. |
-| `social_support` | Social Support | 0.0 – 10.0 | Strength of accessible peer and mentor support networks. |
+- Predicts student dropout risk in real time
+- Interactive Streamlit web interface
+- Risk categorization:
+  - 🟢 Low Risk
+  - 🟡 Moderate Risk
+  - 🔴 High Risk
+- Dynamic visualizations using Plotly
+- Personalized recommendations based on predicted risk
+- Model comparison and performance evaluation
 
 ---
 
-## 🧭 Risk Threshold Matrix & Interventions
+## 📊 Dataset Information
 
-Calculated risk percentages map directly to specific severity tiers and recommendation workflows:
+- Total Records: **2,000 Students**
+- Original Features: **20 Features**
+- Selected Features for Prediction: **9 Features**
 
-| Risk Score | Tier Classification | UI Alert Style | System Recommendation & Guidelines |
-| :--- | :--- | :--- | :--- |
-| **< 30.0%** | **LOW RISK** 🟢 | Green Border / Success | Student appears stable. Continue monitoring routine indicators. |
-| **30.0% - 59.9%** | **MODERATE RISK** 🟡 | Yellow Border / Warning | Consider early intervention strategies and support services. |
-| **≥ 60.0%** | **HIGH RISK** 🔴 | Red Border / Error | Urgent intervention needed. Recommend counseling and academic support. |
+### Selected Features
+
+1. Stress Level
+2. Anxiety Score
+3. Depression Score
+4. Sleep Hours
+5. Burnout Score
+6. Academic Performance
+7. Financial Stress
+8. Family Expectation
+9. Social Support
 
 ---
 
-## 📂 Project Architecture
+## 🧠 Machine Learning Pipeline
 
-Ensure your workspace directory tree is structured exactly as follows for the app to successfully read the pipeline artifacts:
+1. Data Collection
+2. Data Cleaning & Preprocessing
+3. Exploratory Data Analysis (EDA)
+4. Feature Selection
+5. Feature Scaling
+6. Model Training
+7. Model Evaluation
+8. Model Deployment
 
-```text
-.
-├── app.py                     # Main Streamlit web application script
-├── dropout_risk_model.pkl     # Pre-trained serialized Machine Learning model
-└── feature_scaler.pkl         # Pre-trained serialized MinMaxScaler/StandardScaler artifact<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/4a71de12-d9e4-447b-9445-444bf03695a0" />
+---
+
+## 🤖 Models Implemented
+
+- Linear Regression
+- Random Forest Regressor
+- XGBoost Regressor
+
+---
+
+## 📈 Model Performance
+
+| Model | R² Score | MAE | RMSE |
+|---------|---------|---------|---------|
+| Linear Regression | 0.6338 | 6.5987 | 8.4200 |
+| Random Forest | 0.6001 | 6.9087 | 8.7987 |
+| XGBoost | 0.5800 | 7.0997 | 9.0180 |
+
+### 🏆 Best Model: Linear Regression
+
+- R² Score: **0.6338**
+- MAE: **6.60**
+- RMSE: **8.42**
+
+The Linear Regression model achieved the highest performance and was selected for deployment.
+
+---
+
+## 🖥️ Tech Stack
+
+### Programming Language
+- Python
+
+### Libraries
+- Pandas
+- NumPy
+- Scikit-Learn
+- XGBoost
+- Joblib
+- Plotly
+
+### Framework
+- Streamlit
+
+---
+
+## 📷 Application Workflow
+
+1. User enters student information.
+2. Data is preprocessed and scaled.
+3. Trained ML model predicts dropout risk.
+4. Risk percentage is displayed.
+5. Interactive charts visualize risk factors.
+6. Recommendations are generated based on risk level.
+
+---
+
+## 📁 Project Structure
