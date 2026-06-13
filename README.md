@@ -109,5 +109,3 @@ The Linear Regression model achieved the highest performance and was selected fo
 6. Recommendations are generated based on risk level.
 
 ---
-
-## 📁 Project Structure
